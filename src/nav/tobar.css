@@ -1,0 +1,30 @@
+.top_bar{
+  z-index: 99999;
+  position: sticky;
+  top: 0px;
+  height: 50px;
+  width: 100%;
+  background-color:#d3d3d3 ;
+  border: none;
+
+}
+.top_bar h2{
+    width: 50vw;
+    color: black;
+}
+.navbar{
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.light{
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 50px;
+    }
