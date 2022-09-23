@@ -7,7 +7,24 @@ class Slide_Bar extends Component {
     constructor(props) {
         super(props);
     }
-    state = { index:0 }
+        state = { index:0 }
+	componentDidMount() {
+    	console.log(this.state.index)
+ // },2000)
+	const manimante= ()=>{
+	      if(this.state.index == 3){
+	 this.setState({index:0})
+   }
+    else{
+  	this.setState({index:this.state.index+1})
+    }
+	}
+	     const timerID = setInterval(() => manimante(), 5000);
+	    return () => clearInterval(timerID);
+
+	}
+    //
+
     render() {
 	        const animae=[
             {
@@ -28,23 +45,9 @@ class Slide_Bar extends Component {
         }
 		]
 	const{index}=this.state
- // setInterval(()=>{
- //     if(this.state.index == 3){
- // 	 this.setState({index:0})
- //     }
- //     else{
- // 	 this.setState({index:this.state.index+1})
- //     }
- //     	console.log(this.state.index)
- // },2000)
-	const manimante= ()=>{
-	      if(this.state.index == 3){
-	 this.setState({index:0})
-   }
-    else{
-  	 this.setState({index:this.state.index+1})
- }
-	}
+
+	const {img_path} = this.props
+	
         return (  
           <div class="slideshow-container">   
                 <div class="mySlides">
