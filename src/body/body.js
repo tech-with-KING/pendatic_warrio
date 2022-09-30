@@ -62,44 +62,8 @@ const Body=(props)=>{
 
 
 		{/* this is the part i dispalay my different tech stacks in that small circle to show all the past projects i have done*/}
-	    <div className='tech_stacks'>
-	    <h3>TECH-STACKS</h3>
-	    <div className='t_s'>
-	    {datas.map((dat)=>{
-		return(
-		    	    <div>
-		
-	    
-	    <div className='t_c' style={{backgroundImage:`url(${dat.img})`}}></div>
-	    	    <p> 20%</p>
-            <div className='t_line'>
-         	    <div></div>
-			</div>
-				<h4>{dat.name}</h4>
-			</div>
-		)
-	    })}
-
-
-
-
-
-
-
-
-	    </div>
-	    
-
-	
-	    </div>
-            <motion.div className='hot'
-	      initial={{opacity:1}}
-              transition={{duration:1}}
-            >
-	    
-             <h1>Projects</h1>
-
-            </motion.div> 
+	  
+            
             <div className='my_projects'>
                 <div  className='eop'>
 		    <div ref={projec_ref} className="p_div">
@@ -123,37 +87,11 @@ const Body=(props)=>{
 
 
             <>
-            <About />
             </>
 	
 	    
-                <div className='line'></div>
+            <div className='line'></div>
             
-	{/*this part of the page is the part i add the remainint part of projec*/}
-            
-            <motion.div  className='hots' >
-
-	
-             <h1>Articles</h1>
-
-            </motion.div>
-            
-                <div ref={article_ref}>
-                {
-                    datas.map((data,i)=>{
-                        return(
-			    <motion.div
-                                key={data.id}
-			         initial={{opacity:0, translateX:-100}}
-				animate={article_view?{opacity:1, translateX: 0}:{}}
-				transition={{duration:1,delay:i*1}} >
-                                <Carded_Two img={data.img} />
-                            </motion.div>
-                        
-                        )
-                    })
-                }
-		    </div>
             </div>
                
         </div>    

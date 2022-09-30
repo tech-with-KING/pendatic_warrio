@@ -34,10 +34,9 @@ class Card_componnt extends Component {
         return (
         <>
 		<div className="card_to" style={{minHeight:'400px'}}>
-                <img src={this.props.img} alt="John" style={{width:'130px',height:'130px',borderRadius:'50%',}}/>
+                            
                
-               
-			            </div>
+	    </div>
        </>
         );
     }

@@ -1,3 +1,5 @@
+
+
 import React, { Component } from 'react';
 import './App.css';
 import Body from './body/body';
@@ -22,32 +24,39 @@ class App extends Component {
     }}
     componentDidMount() {
 	const api = async () => {
-	    const {movies} = this.state
-	    const ret = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=7c2dd11a7cca2cabc0ce2e539b616429&language=en')
+	    let {movies} = this.state
+	    const ret = await fetch(
+		'https://api.themoviedb.org/3/movie/popular/?api_key=7c2dd11a7cca2cabc0ce2e539b616429&language=en',
+		{
+		    "method":"GET"
+		}
+	    )
 	    const bar = await ret.json()
-	    const newb = await [...ret]
-	    console.log(newb)
+	    const newb = [...bar.results]
+	    this.setState({movies:newb})
+	    
+	    console.log(movies[0].adult)
 	}
 	api()
 
     }
 
     render() {
-	const { toggle } = this.state
+	let {toggle} = this.state
 	const set_toggle = () => { toggle ? this.setState({ toggle: false }) : this.setState({ toggle: true }) }
+	const set_moves = () =>{
+	    console.log(this.state.movies[0])
+	    
 
-	const home = () => {
-	    return (
-		    <>
-		    </>
-	    )
 	}
+	set_moves()
+
 	return (
 			<>
 				<Router>
 					<Menue_Bar toggle={toggle} />
 					<Routes>
-		<Route path="/" element={<><Slide_Bar img_path ={this.state.bew} /><Top_Bar toggle={toggle} set_toggle={set_toggle} /><Body /></>} />
+		<Route path="/" element={<><Slide_Bar movies = {[...this.state.movies]} /><Top_Bar toggle={toggle} set_toggle={set_toggle} /><Body /></>} />
 						<Route path="/articles" element={<><Top_Bar toggle={toggle} set_toggle={set_toggle} /><Article /></>} />
 		<Route path="/projects" element={<><Top_Bar toggle={toggle} set_toggle={set_toggle} /><Projects /></>} />
 
