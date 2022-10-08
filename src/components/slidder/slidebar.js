@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import Card_componnt,{Carded} from '../cardbar/cardbar';
 import {motion ,AnimatePresence} from 'framer-motion'
 import './slidebar.css'
+import { SEARCH_BASE_URL,
+	  POPULAR_BASE_URL,  API_URL,  API_KEY,  IMAGE_BASE_URL,  BACKDROP_SIZE,
+	  POSTER_SIZE,  REQUEST_TOKEN_URL,  LOGIN_URL,  SESSION_ID_URL,
+       } from '../../config'
+
 
 class Slide_Bar extends Component {
     constructor(props) {
@@ -11,6 +16,7 @@ class Slide_Bar extends Component {
 	    loading:false,
 	    results : []
 	}
+
     };
 
 
@@ -18,14 +24,8 @@ class Slide_Bar extends Component {
     
     
     componentDidMount() {
-	const set_movies = ()=>{
-	    if(this.props.movies){
-		this.setState({loading:true})
-		
-	    }
-	}
-	set_movies()
-	const manimante= ()=>{
+	
+	{/*	const manimante= ()=>{
 
 	    if(this.state.index == 3){
 		this.setState({index:0})
@@ -36,13 +36,16 @@ class Slide_Bar extends Component {
 	}
 	     const timerID = setInterval(() => manimante(), 5000);
 	    return () => clearInterval(timerID);
+	 */}
 
-	}
-    // render function
+    }
+
+    
 
     render() {
 	// the animate array
 	const {movies} = this.props
+
 	const animae=[
             {
                 id:1,
@@ -93,9 +96,11 @@ class Slide_Bar extends Component {
 	{
 	    if(movies){
 			return ( 
-		<div class="slideshow-container" style={{backgroundImage:`url(${datas[2].img})`}}>   
-                <div class="mySlides" >
-				<h1>{console.log('hello '+this.prop.movies[0].adult)} hello</h1>
+				<div class="slideshow-container" style={{backgroundImage:`url(${IMAGE_BASE_URL+BACKDROP_SIZE+this.props.movies})`}}>
+				
+				<div class="mySlides" >
+
+				
 		<AnimatePresence exitBeforeEnter>
                 <motion.div
 	                key={index}
