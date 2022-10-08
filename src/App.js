@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Body from './body/body';
-import Modal from './components/modalbox/modalbox'
+import {motion ,AnimatePresence} from 'framer-motion'
 import Articles from "./article_page/index"
 import Article from "./article_page/article_list"
 import Slide_Bar from './components/slidder/slidebar'
@@ -61,14 +61,31 @@ class App extends Component {
 	const set_moves = () =>{
 	    
 	}
-	set_moves()
+	const make_me = ()=>{
+
+    return(
+			<AnimatePresence exitBeforeEnter>
+                <motion.div
+	                key={this.state.index}
+	    exitBeforeEntry={true}
+            initial={{opacity:1, translateX:"-100vw"}}
+	    
+                            animate={{opacity:1.5, translateX:"0vw"}}
+            transition={{duration:1,ease:'easeOut'}}
+	    exit={{translateX:"100vw", transition:{duration:0.5}}}
+	    >
+	    <Slide_Bar movies = {this.state.movies[this.state.index].backdrop_path} />
+	    </motion.div>
+		</AnimatePresence>
+    )
+}
 
 	return (
 			<>
 				<Router>
 					<Menue_Bar toggle={toggle} />
 					<Routes>
-		<Route path="/" element={<>{this.state.movies[this.state.index] ?<Slide_Bar movies = {this.state.movies[this.state.index].backdrop_path} /> :null}<Top_Bar toggle={toggle} set_toggle={set_toggle} /><Body /></>} />
+		<Route path="/" element={<>{this.state.movies[this.state.index] ?make_me() :null}<Top_Bar toggle={toggle} set_toggle={set_toggle} /><Body /></>} />
 						<Route path="/articles" element={<><Top_Bar toggle={toggle} set_toggle={set_toggle} /><Article /></>} />
 		<Route path="/projects" element={<><Top_Bar toggle={toggle} set_toggle={set_toggle} /><Projects /></>} />
 
@@ -80,6 +97,6 @@ class App extends Component {
 			</>
 		);
 	}
-}
+};
 
 export default App;

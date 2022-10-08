@@ -18,54 +18,7 @@ class Slide_Bar extends Component {
 	}
 
     };
-
-
-
-    
-    
-    componentDidMount() {
-	
-	{/*	const manimante= ()=>{
-
-	    if(this.state.index == 3){
-		this.setState({index:0})
-	    }
-	    else{
-  		this.setState({index:this.state.index+1})
-	    }
-	}
-	     const timerID = setInterval(() => manimante(), 5000);
-	    return () => clearInterval(timerID);
-	 */}
-
-    }
-
-    
-
     render() {
-	// the animate array
-	const {movies} = this.props
-
-	const animae=[
-            {
-                id:1,
-                item:<Card_componnt/>,
-            },
-            {
-		id:2,
-		item: <Carded/>,
-            },
-            {
-		id:3,
-		item:   <Card_componnt/>
-            },
-            {
-		id:4,
-		item:  <Carded/>
-            }
-	]
-	const{index}=this.state
-	
   const datas =[
       {
           id:1,
@@ -94,24 +47,10 @@ class Slide_Bar extends Component {
     }
   ]
 	{
-	    if(movies){
-			return ( 
-				<div class="slideshow-container" style={{backgroundImage:`url(${IMAGE_BASE_URL+BACKDROP_SIZE+this.props.movies})`}}>
-				
-				<div class="mySlides" >
 
-				
-		<AnimatePresence exitBeforeEnter>
-                <motion.div
-	                key={index}
-	    exitBeforeEntry={true}
-            initial={{opacity:1, translateX:"-100vw"}}
-	    
-                            animate={{opacity:1.5, translateX:"0vw"}}
-            transition={{duration:1,ease:'easeOut'}}
-	    exit={{translateX:"100vw", transition:{duration:0.5}}}
-				>{console.log(this.props.movies)} </motion.div>
-		</AnimatePresence>
+	    return ( 
+		    <div class="slideshow-container" style={{backgroundImage:`url(${IMAGE_BASE_URL+BACKDROP_SIZE+this.props.movies})`}}>
+		    <div class="mySlides" >
                  </div>
                 <div class="dot-container" >
 		<a  ></a>
@@ -124,7 +63,7 @@ class Slide_Bar extends Component {
             </div>
         
 	); 
-	    }
+	    
 	}
 
 
