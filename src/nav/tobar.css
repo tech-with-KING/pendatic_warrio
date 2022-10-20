@@ -3,14 +3,16 @@
   position: sticky;
   top: 0px;
   height: 50px;
+  color: white;
+  font-weight: normal;
   width: 100%;
-  background-color:#d3d3d3 ;
+  background-color:transparent;
   border: none;
 
 }
 .top_bar h2{
     width: 50vw;
-    color: black;
+    color: white;
 }
 .navbar{
     height: 50px;

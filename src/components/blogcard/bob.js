@@ -15,24 +15,10 @@ class Carded extends Component {
     
     render() { 
         return ( 
-        <>
-            <div class="container_" style={{width:'400px'}}>
-                <div class="card_">
-                    <div class="card__header">
-                        <div className='project_img' style={{backgroundImage:`url(${IMAGE_BASE_URL+BACKDROP_SIZE+this.props.img_url})`}}></div>
-                    </div>
-                    <div class="card__body_">
-                <span class="tag tag-red" >react</span>
-                    <h4>Race to your heart content</h4>
-                    <p style={{margin:'5px'}}>Loestiae ihil! At ea atque quidem!</p>
-                    </div>
-                    <div class="card__footer">
-                        
-                
-                    </div>
+                <div class="card" style={{backgroundImage:`url(${IMAGE_BASE_URL+BACKDROP_SIZE+this.props.img_url})`}}>
+
                 </div>
-            </div>
-        </>
+   
          );
     }
 }

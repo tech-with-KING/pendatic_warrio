@@ -19,44 +19,16 @@ class Slide_Bar extends Component {
 
     };
     render() {
-  const datas =[
-      {
-          id:1,
-          text:"this is going to be some of the best articles yuo will ever get to read",
-          img:'/img/pythondev1.jpeg',
-	  name:'python/django'
-	  
-      },
-      {
-        id:2,
-        text:"this is going to be some of the best articles yuo will ever get to read",
-          img:'/img/bn.png',
-	  name:'Reac/js'
-    },
-    {
-        id:3,
-        text:"this is going to be some of the best articles yuo will ever get to read",
-        img:'/img/cforme.jpeg',
-	name:'C'
-    },
-      {
-        id:4,
-        text:"this is going to be some of the best articles yuo will ever get to read",
-        img:'/img/git.png',
-	name:'git'
-    }
-  ]
-	{
-
 	    return ( 
-		    <div class="slideshow-container" style={{backgroundImage:`url(${IMAGE_BASE_URL+BACKDROP_SIZE+this.props.movies})`}}>
-		    <div class="mySlides" >
+		    <div className="slideshow-container" style={{backgroundImage:`url(${IMAGE_BASE_URL+BACKDROP_SIZE+this.props.movies})`}}>
+		    <div className="mySlides" >
+		    <h3></h3>
                  </div>
-                <div class="dot-container" >
+                <div className="dot-container" >
 		<a  ></a>
-                    <span class="dot" ></span>
-                    <span class="dot" ></span>
-                <span onClick={()=>{manimante()}}class="dot"></span>
+                    <span className="dot" ></span>
+                    <span className="dot" ></span>
+                <span className="dot"></span>
 
                 </div>
 
@@ -67,7 +39,7 @@ class Slide_Bar extends Component {
 	}
 
 
-    }
+    
 }
  
 export default Slide_Bar;
