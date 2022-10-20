@@ -71,7 +71,11 @@ class App extends Component {
             transition={{duration:1,ease:'easeOut'}}
 	    exit={{translateX:"100vw", transition:{duration:0.5}}}
 	    >
-	    <Slide_Bar movies = {this.state.movies[this.state.index].backdrop_path} />
+	    <Slide_Bar
+	movies = {this.state.movies[this.state.index].backdrop_path}
+	overview={this.state.movies[this.state.index].overview}
+	title ={this.state.movies[this.state.index].title}
+	    />
 	    </motion.div>
 		</AnimatePresence>
     )

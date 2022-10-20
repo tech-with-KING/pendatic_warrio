@@ -22,7 +22,8 @@ class Slide_Bar extends Component {
 	    return ( 
 		    <div className="slideshow-container" style={{backgroundImage:`url(${IMAGE_BASE_URL+BACKDROP_SIZE+this.props.movies})`}}>
 		    <div className="mySlides" >
-		    <h3></h3>
+		    <h3>{this.props.title}</h3>
+		    <p>{this.props.overview}</p>
                  </div>
                 <div className="dot-container" >
 		<a  ></a>
