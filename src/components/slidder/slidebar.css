@@ -43,33 +43,6 @@
   }
   
   /* Position the "next button" to the right */
-  .next {
-    position: absolute;
-    right: 0;
-    height: 20px;
-    width: 20px;
-    background-color: rgb(15, 207, 159);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    box-shadow: 2px 6px 10px rgba(0,0,0,0.2) ;
-    font-size: 20px;
-  }
-  .prev {
-    position: absolute;
-    left: 0;
-    height: 20px;
-    width: 20px;
-    background-color: rgb(15, 207, 159);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    box-shadow: 2px 6px 10px rgba(0,0,0,0.2) ;
-    font-size: 20px
-  }
-  
   /* On hover, add a black background color with a little bit see-through */
   .prev:hover, .next:hover {
     background-color: rgba(0,0,0,0.8);
@@ -79,7 +52,7 @@
   /* The dot/bullet/indicator container */
   .dot-container {
     text-align: center;
-    padding: 20px;
+    padding: 8px;
     background:transparent;
   }
   
@@ -94,14 +67,4 @@
     display: inline-block;
     transition: background-color 0.6s ease;
   }
-  
-  /* Add a background color to the active dot/circle */
-  .active, .dot:hover {
-    background-color: #717171;
-  }
-  
-  /* Add an italic font style to all quotes */
-  q {font-style: italic;}
-  
-  /* Add a blue color to the author */
-  .author {color: cornflowerblue;}
+

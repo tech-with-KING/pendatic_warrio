@@ -32,6 +32,9 @@ class Slide_Bar extends Component {
                 <span className="dot"></span>
 
                 </div>
+		    <div className="search_bar" >
+
+                </div>
 
             </div>
         

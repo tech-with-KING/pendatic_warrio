@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import Body from './body/body';
 import {motion ,AnimatePresence} from 'framer-motion'
-import Articles from "./article_page/index"
-import Article from "./article_page/article_list"
 import Slide_Bar from './components/slidder/slidebar'
 import Top_Bar from './nav/topbar'
 import DownBar from './root/bottom_bar';
@@ -87,10 +85,9 @@ class App extends Component {
 					<Menue_Bar toggle={toggle} />
 					<Routes>
 		<Route path="/" element={<>{this.state.movies[this.state.index] ?make_me() :null}<Top_Bar toggle={toggle} set_toggle={set_toggle} /><Body data = {[...this.state.movies]} /></>} />
-						<Route path="/articles" element={<><Top_Bar toggle={toggle} set_toggle={set_toggle} /><Article /></>} />
-		<Route path="/projects" element={<><Top_Bar toggle={toggle} set_toggle={set_toggle} /><Projects /></>} />
+			<Route path="/projects" element={<><Top_Bar toggle={toggle} set_toggle={set_toggle} /><Projects /></>} />
 
-						<Route path="/articles/one" element={<><Top_Bar toggfle={toggle} set_toggle={set_toggle} /><Articles /></>} />
+	
 					</Routes>
 					<DownBar />
 				</Router>

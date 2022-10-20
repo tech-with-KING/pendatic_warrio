@@ -15,7 +15,10 @@ const Body=(props)=>{
     const {ref:projec_ref,inView:project_view}=useInView()
     const [dark,setdark]=useState(false)
     return(
+	<>
+	    <h1>Discover</h1>
 	    <div ref={projec_ref} className="popular_movies">
+
 	    {
 		props.data.map((data,i)=>{
                         return(
@@ -28,7 +31,7 @@ const Body=(props)=>{
                         )
                     })
                 }
-	</div>
+	</div></>
      )
 }
 export default Body;
