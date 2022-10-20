@@ -13,21 +13,6 @@ const Body=(props)=>{
     const {ref:article_ref,inView:article_view}=useInView()
     const {ref:projec_ref,inView:project_view}=useInView()
     const [dark,setdark]=useState(false)
-    const darkmode = () =>{
-        if (dark) {
-            setdark(false)
-        } else {
-            setdark(true)
-        }
-    }
-    const coloring={
-      darkbg:'black',
-      lightbg:'white',
-      darkcl:'black',
-      lightcl:'white',
-      darkbd:'',
-      lightbd:''
-  }
   const datas =[
       {
           id:1,
@@ -58,43 +43,21 @@ const Body=(props)=>{
 
     return(
             <div className='body'>
-	    {	    /* this part is the main home menu of the app */}
-
-
-		{/* this is the part i dispalay my different tech stacks in that small circle to show all the past projects i have done*/}
-	  
-            
-            <div className='my_projects'>
-                <div  className='eop'>
-		    <div ref={projec_ref} className="p_div">
-			   {
-                    datas.map((data,i)=>{
+	    <div ref={projec_ref} className="popular_movies">
+	    {
+		props.data.map((data,i)=>{
                         return(
                             <motion.div key={data.id}
 			    initial={{opacity:0,transform:'scale(0)'}}
 			    animate={project_view?{opacity:1, transform:'scale(1)'}:{}}
 					transition= {{duration:1,delay:i*1.5}} > 
-                                <Carded img={data.img}/> 
+                                <Carded img_url={data.backdrop_path}/> 
                             </motion.div>
                         )
                     })
                 }
-			
 		    </div>
-		 
-
-                </div>
-
-
-            <>
-            </>
-	
-	    
-            <div className='line'></div>
-            
-            </div>
-               
-        </div>    
+	    </div>    
      )
 }
 export default Body;

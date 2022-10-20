@@ -58,9 +58,6 @@ class App extends Component {
     render() {
 	let {toggle} = this.state
 	const set_toggle = () => { toggle ? this.setState({ toggle: false }) : this.setState({ toggle: true }) }
-	const set_moves = () =>{
-	    
-	}
 	const make_me = ()=>{
 
     return(
@@ -85,7 +82,7 @@ class App extends Component {
 				<Router>
 					<Menue_Bar toggle={toggle} />
 					<Routes>
-		<Route path="/" element={<>{this.state.movies[this.state.index] ?make_me() :null}<Top_Bar toggle={toggle} set_toggle={set_toggle} /><Body /></>} />
+		<Route path="/" element={<>{this.state.movies[this.state.index] ?make_me() :null}<Top_Bar toggle={toggle} set_toggle={set_toggle} /><Body data = {[...this.state.movies]} /></>} />
 						<Route path="/articles" element={<><Top_Bar toggle={toggle} set_toggle={set_toggle} /><Article /></>} />
 		<Route path="/projects" element={<><Top_Bar toggle={toggle} set_toggle={set_toggle} /><Projects /></>} />
 
