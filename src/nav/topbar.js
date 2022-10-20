@@ -15,6 +15,10 @@ const Top_bar=(props)=>{
 	   if(!toggle){return(<MenuIcon style = {style} />)}else{return( <ClearTwoToneIcon style = {style} />)}
        	}
     return(
+	    <>
+	    <div className='search_container'>
+	    <div className='search_bar'></div>
+	</div>     
 	    <div className='top_bar'>
 
 	    <div className='navbar' >
@@ -26,8 +30,7 @@ const Top_bar=(props)=>{
 	        <DarkModeIcon />
 	    </div>
 	    </div>
-
-	</div>     
+	</div>     </>
     )
 }
 export default Top_bar;
