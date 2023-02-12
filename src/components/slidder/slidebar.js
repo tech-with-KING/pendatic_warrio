@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
-import Card_componnt,{Carded} from '../cardbar/cardbar';
-import {motion ,AnimatePresence} from 'framer-motion'
 import './slidebar.css'
-import { SEARCH_BASE_URL,
-	  POPULAR_BASE_URL,  API_URL,  API_KEY,  IMAGE_BASE_URL,  BACKDROP_SIZE,
-	  POSTER_SIZE,  REQUEST_TOKEN_URL,  LOGIN_URL,  SESSION_ID_URL,
-       } from '../../config'
+import {IMAGE_BASE_URL,  BACKDROP_SIZE} from '../../config'
 
 
 class Slide_Bar extends Component {

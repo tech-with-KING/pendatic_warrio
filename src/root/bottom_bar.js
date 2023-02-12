@@ -1,6 +1,5 @@
 import React from 'react';
 import './bottom_bar.css'
-import cosmic from '../img/s_tile.svg'
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import {FacebookSharp,GitHub, Twitter, LinkedIn, Instagram, ArrowDownward, ViewCarousel, ArrowDropUp, Email, YouTube, Message} from '@mui/icons-material';
 
@@ -14,7 +13,7 @@ const DownBar=()=>{
                     <li>About</li>
                     <li>Contact</li>
                 </ul>
-                <img className='logo' src={cosmic} alt='logo'/>
+                
             </div>
             <div className='our_socials'>
 	    <div  className='modals'>

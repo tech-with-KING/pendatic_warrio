@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import './bob.css'
-import bob from './img.JPG'
-import { SEARCH_BASE_URL,
-	  POPULAR_BASE_URL,  API_URL,  API_KEY,  IMAGE_BASE_URL,  BACKDROP_SIZE,
-	  POSTER_SIZE,  REQUEST_TOKEN_URL,  LOGIN_URL,  SESSION_ID_URL,
-       } from '../../config'
+import {IMAGE_BASE_URL,  BACKDROP_SIZE} from '../../config'
+import { Link } from 'react-router-dom';
 class Carded extends Component {
     constructor(props) {
         super(props);
@@ -14,11 +11,11 @@ class Carded extends Component {
     }
     
     render() { 
-        return ( 
+        return ( <Link to={`movies/${this.props.id}`}>
                 <div class="card" style={{backgroundImage:`url(${IMAGE_BASE_URL+BACKDROP_SIZE+this.props.img_url})`}}>
-
+                
                 </div>
-   
+                </Link>
          );
     }
 }

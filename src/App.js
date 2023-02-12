@@ -5,10 +5,10 @@ import {motion ,AnimatePresence} from 'framer-motion'
 import Slide_Bar from './components/slidder/slidebar'
 import Top_Bar from './nav/topbar'
 import DownBar from './root/bottom_bar';
-import Projects from "./projects_page/index"
 import Menue_Bar from './nav/menue'
 import {fetch_movies} from './fetchapi'
 import { BrowserRouter as Router, Routes, Route,Outlet } from "react-router-dom"
+import MoviePage from './components/movies/card';
 
 
 class App extends Component {
@@ -85,7 +85,7 @@ class App extends Component {
 					<Menue_Bar toggle={toggle} />
 					<Routes>
 		<Route path="/" element={<>{this.state.movies[this.state.index] ?make_me() :null}<Top_Bar toggle={toggle} set_toggle={set_toggle} /><Body data = {[...this.state.movies]} /></>} />
-			<Route path="/projects" element={<><Top_Bar toggle={toggle} set_toggle={set_toggle} /><Projects /></>} />
+			<Route path="/movies/:movie" element={<><MoviePage  /></>} />
 
 	
 					</Routes>
